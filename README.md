@@ -137,6 +137,8 @@ CSV输入 → Text Safety Check → 过滤行
                                  ├── is_safe = true  → 安全数据输出
                                  └── is_safe = false → 违规记录输出
 ```
+<img width="661" height="365" alt="image" src="https://github.com/user-attachments/assets/bda4a69c-0192-423e-93a8-5393570e6dd2" />
+<img width="726" height="342" alt="image" src="https://github.com/user-attachments/assets/6071d61e-0d8e-40a5-a062-235084258a11" />
 
 ## 风险类别
 
