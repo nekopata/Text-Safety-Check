@@ -1,0 +1,39 @@
+# Java / Maven
+kettle-plugin/target/
+*.class
+
+# Kettle 编译依赖（从 Kettle 安装目录复制，不提交到仓库）
+kettle-plugin/src/main/resources/lib/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Environment
+.env
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model files (too large for git)
+text_filter_service/model/
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth
+

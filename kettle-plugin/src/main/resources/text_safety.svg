@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#E0E7FF" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <!-- 圆角背景 -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  <!-- 盾牌主体 -->
+  <path d="M16 4.5 L24.5 8.5 L24.5 15 C24.5 20.5 20.5 25 16 27 C11.5 25 7.5 20.5 7.5 15 L7.5 8.5 Z"
+        fill="url(#shield)" stroke="#4338CA" stroke-width="0.6" opacity="0.92"/>
+  <!-- AI 电路纹路 -->
+  <circle cx="16" cy="14" r="1.8" fill="none" stroke="#4338CA" stroke-width="0.8"/>
+  <circle cx="16" cy="14" r="0.8" fill="#4338CA"/>
+  <line x1="16" y1="12.2" x2="16" y2="9" stroke="#4338CA" stroke-width="0.7"/>
+  <line x1="17.6" y1="14.8" x2="20" y2="16.5" stroke="#4338CA" stroke-width="0.7"/>
+  <line x1="14.4" y1="14.8" x2="12" y2="16.5" stroke="#4338CA" stroke-width="0.7"/>
+  <circle cx="16" cy="8.5" r="0.6" fill="#6366F1"/>
+  <circle cx="20.5" cy="17" r="0.6" fill="#6366F1"/>
+  <circle cx="11.5" cy="17" r="0.6" fill="#6366F1"/>
+  <!-- 对勾 -->
+  <path d="M13 20 L15.2 22.5 L19.5 18" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+
