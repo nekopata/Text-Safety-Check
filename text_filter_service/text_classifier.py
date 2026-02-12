@@ -79,7 +79,7 @@ class TextClassifier:
 
             score = value.item()
             if token_str in self.id2risk:
-                risk_score_map[self.id2risk[token_str]] = score
+                risk_score_map[token_str] = score
             elif token_str in VALID_CATEGORIES:
                 risk_score_map[token_str] = score
 
