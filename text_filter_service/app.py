@@ -38,28 +38,40 @@ app.add_middleware(
 def evaluate_risk(risk_map: dict, threshold: float) -> Tuple[bool, Optional[str], float]:
     """Determine the highest-risk category and whether it exceeds the threshold.
 
+    Logic:
+        1. If "sec" (safe) has the highest score among all categories,
+           the model considers the content safe → return is_safe=True.
+        2. Otherwise, if the highest risk score >= threshold → unsafe.
+        3. Otherwise → safe.
+
     Args:
         risk_map: Mapping of category code -> probability score.
         threshold: Score above which the text is considered unsafe.
 
     Returns:
-        (is_safe, blocked_category_or_None, max_score)
+        (is_safe, blocked_category_or_None, max_risk_score)
     """
-    max_score = 0.0
-    blocked_cat: Optional[str] = None
+    sec_score = risk_map.get("sec", 0.0)
+
+    max_risk_score = 0.0
+    max_risk_cat: Optional[str] = None
 
     for category, score in risk_map.items():
         if category == "sec":
-            continue  # Skip the "safe" category
+            continue
+        if score > max_risk_score:
+            max_risk_score = score
+            max_risk_cat = category
 
-        if score > max_score:
-            max_score = score
-            blocked_cat = category
+    # sec is the dominant prediction → model says safe
+    if sec_score > max_risk_score:
+        return True, None, max_risk_score
 
-    if max_score >= threshold:
-        return False, blocked_cat, max_score
+    # A risk category dominates, check against threshold
+    if max_risk_score >= threshold:
+        return False, max_risk_cat, max_risk_score
 
-    return True, None, max_score
+    return True, None, max_risk_score
 
 
 # ------------------------------------------------------------------
